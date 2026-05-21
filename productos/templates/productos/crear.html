@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block head_title %}
+Crear Maquillaje
+{% endblock head_title %}
+
+{% block contenido %}
+<h1>Crear Maquillaje</h1>
+
+<form action="{% url "productos:crear_maquillaje" %}" method="POST">
+    {% csrf_token %}
+    
+    {{formulario}}
+
+    <input type="submit">
+</form>
+{% endblock contenido %}

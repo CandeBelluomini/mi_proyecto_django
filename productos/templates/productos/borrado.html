@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block head_title %}
+Borrar Maquillaje
+{% endblock head_title %}
+
+{% block contenido %}
+<h1>Borrar Maquillaje</h1>
+
+<form action="{% url "productos:borrar_maquillaje" maquillaje.id %}" method="POST">
+    {% csrf_token %}
+    <p>¿Estás seguro de que quieres borrar este elemento {{ maquillaje }} ?</p>
+    <input type="submit"  value="Confirmar">
+</form>
+{% endblock contenido %}

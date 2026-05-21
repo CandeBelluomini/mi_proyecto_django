@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block head_title %}
+Actualizar Maquillaje
+{% endblock head_title %}
+
+{% block contenido %}
+<h1>Actualizar Maquillaje</h1>
+
+<form action="{% url "productos:actualizar_maquillaje" maquillaje.id %}" method="POST">
+    {% csrf_token %}
+    
+    {{form}}
+
+    <input type="submit"  value="Actualizar">
+</form>
+{% endblock contenido %}
