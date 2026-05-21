@@ -33,3 +33,15 @@ El proyecto consiste en un blog tipo plataforma web funcional, desarrollado en P
 
 * Repositorio en GitHub: https://github.com/CandeBelluomini/mi_proyecto_django
 * Nota sobre el Despliegue: El proyecto se encuentra estructurado y configurado en "Production Ready" mediante el archivo `requirements.txt` y los permisos de `ALLOWED_HOSTS` en `settings.py` para ser desplegado en servicios Cloud como Render o PythonAnywhere.
+
+
+## Configuración de Variables de Entorno
+Para mejorar la seguridad del proyecto, no se debe subir `SECRET_KEY` directamente al repositorio. En su lugar, el proyecto utiliza `django-environ` para cargar la configuración desde variables de entorno.
+
+### Configuración local
+1. Crea un archivo `.env` en la raíz del proyecto.
+2. Copia este formato y completa con tus valores:
+   ```env
+   SECRET_KEY=tu_clave_secreta_aquí
+   DEBUG=True
+   ALLOWED_HOSTS=127.0.0.1,localhost
